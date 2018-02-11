@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../jquery-3.1.0.min.js"></script>
+    <script src="./play.js"></script>
+    <title>Document</title>
+    <style>
+      #my_gallery>div{
+        width: 200px;
+        height: 200px;
+        float: left;
+        overflow: hidden;
+        border-right: 1px solid #fff;
+        border-bottom: 1px solid #fff; 
+        position: relative;
+        box-sizing: border-box;
+        transition: all .2s;
+      }
+      #my_gallery>div img{
+          position: absolute;
+          left: 50%;
+          top:50%;
+          transform: translate(-50%,-50%);
+      }
+      #my_gallery>div .text{
+          position: absolute;
+          bottom: 0;
+          padding: 10px;
+          width: 340;
+          background-color:rgba(255, 255, 255, .2);
+          color: #fff;
+          transform: translateY(100%);
+          box-sizing: border-box;
+          transition:all .1s linear;
+      }
+      #my_gallery>div.active .text{
+        transform: translateY(0%);
+        }
+    </style>
+</head>
+<body>
+    <div id="my_gallery">
+        <div><img src="../images/image1.jpg" alt=""></div>
+        <div><img src="../images/image2.jpg" alt=""></div>
+        <div><img src="../images/image3.jpg" alt=""></div>
+        <div><img src="../images/image4.jpg" alt=""></div>
+        <div><img src="../images/image5.jpg" alt=""></div>
+        <div>
+            <img src="../images/image6.jpg" alt="">
+            <div class="text">
+                    <h1>this is a big title</h1>
+                    <p>Laborum anim quis non sint qui. Non deserunt laboris nulla proident tempor in occaecat. Excepteur proident ex veniam labore. Magna dolor sunt pariatur nisi nulla. Est pariatur amet cillum sint nostrud. Proident mollit occaecat exercitation minim nisi labore ullamco nulla mollit pariatur. Commodo aute est culpa pariatur velit tempor enim ipsum deserunt id non tempor.</p>
+            </div>
+        </div>
+        <div><img src="../images/image7.jpg" alt=""></div>
+        <div><img src="../images/image8.jpg" alt=""></div>
+        <div><img src="../images/image9.jpg" alt=""></div>
+    </div>
+    <script>
+        var myGallery = new xyGallery('my_gallery',{width:3,height:3})
+    </script>
+</body>
+</html>
