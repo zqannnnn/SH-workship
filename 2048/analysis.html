@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>2048分析文档</title>
+    <style>
+        div{
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+            width: 1220px;
+            background-color: #fff;
+            height: 600px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>2048</p>
+        <h2>
+            在进行游戏制作前，分析游戏过程，确认游戏变量，进行游戏配置。
+            首先进行背景板的绘制，根据block的个数确认背景板的长宽；
+            buildblock()：getBlockIndex(),getIndex(),getCoordinate();
+            getPosition();
+            move():getBlock()(state[getIndex(x,y)])
+            切记：必须确认空块的数目，当空块为1时候进行判断；
+        </h2>
+    </div>
+
+</body>
+</html>
