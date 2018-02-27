@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../jquery-3.1.0.min.js"></script>
+    <title>Document</title>
+    <style>
+        *{
+        padding: 0;
+        margin: 0;
+        }
+        .bg{
+            width: 100%;
+            background-color: red;
+            height: 300px;
+        }
+        .box{
+            position: relative;
+        }
+        .text{
+            text-align: center;
+            font-family: "微软雅黑";
+            height: 300px;
+            color: #fff;
+            line-height: 300px;
+            background-color: darkorange;
+            font-size: 50px;
+        }
+        #canvas{
+            position: absolute;
+            top: 0%;
+            left: 0%;
+        }
+    </style>
+</head>
+<body>
+   <div class="box">
+        <canvas id="canvas"></canvas>
+        <div class="text">text</div>
+        <div class="bg"></div>
+   </div>
+    <script>
+        var context = document.getElementById('canvas');
+        var ctx = context.getContext('2d');
+        var width = window.innerWidth;
+        context.width = width;
+        context.height = 300;
+        //
+        ctx.fillStyle = "#ccc";
+        ctx.beginPath();
+        ctx.fillRect(0,0,width,300);
+        ctx.closePath();
+
+        context.addEventListener('touchstart',function(e){
+            var moveX = e.touches[0].clientX;
+            var moveY = e.touches[0].clientY;
+            ctx.lineWidth = 50;
+            ctx.beginPath();
+            ctx.globalCompositeOperation = "destination-out";
+            ctx.moveTo(moveX,moveY);
+        })
+        context.addEventListener('touchmove',function(e){
+            var lineX = e.touches[0].clientX;
+            var lineY = e.touches[0].clientY;
+            ctx.lineTo(lineX,lineY);
+            ctx.closePath();
+            ctx.stroke();
+        })
+        var arr = ["谢谢惠顾","没有再来一瓶","想再来一瓶?","特等奖：安慰奖"];
+        var num = Math.floor(Math.random()*arr.length);
+        $('.text').html(arr[num]);
+    </script>
+</body>
+</html>

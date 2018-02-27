@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../jquery-3.1.0.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <h2>见缝插针小游戏</h2>
+    <div><a href="play.html" id="go">关卡 <span class="index"></span></a></div>
+    <script>
+        var level = parseInt(window.location.href.split("#")[1]);
+        if(level){
+            if(level == 7){
+                level =0;
+            }
+        }
+        $('.index').html(level+1);
+        $('#go').attr("href","play.html#"+level)
+    </script>
+</body>
+</html>
